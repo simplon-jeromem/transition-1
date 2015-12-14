@@ -266,7 +266,7 @@
     .codeContent{
       width: 100%;
       height: 100%;
-      padding: 2%;
+      padding: 1.5%;
     }
     .scroll {/*_____________________________TEXTE CODE_____*/
       width: 100%;
@@ -276,11 +276,22 @@
       font-size: 0.25em;
       background-color: #373737;
       color: #FFF;
-      padding: 0% 10%;
+      padding: 2% 10%;
+      line-height: 5px;
     }
     .explication {/*______________________LEGENDE CODE_____*/
       font-size: 0.25em;
     }
+    #download, #download:hover{
+      text-align: center;
+      color: #FFF;
+      font-size: 2em;
+      text-decoration: none;
+    }
+    #download:hover{
+      font-size: 1.8em;
+      color:#BBAAF7;
+}
     </style>
   <body><!--***************************************************************************************
         |                                                                           HTML          |
@@ -379,6 +390,8 @@
               |                                                                     JAVASCRIPT       |
               ************************************************************************************-->
     <script>
+    var space = {x1:"&emsp;",x2:"&emsp;&emsp;", x3:"&emsp;&emsp;&emsp;", x4:"&emsp;&emsp;&emsp;&emsp;"};
+
     var contenuText = document.getElementById("contenu");
 //___________________________________________________________________________________BUTTON NEXT 1_______________
     function next(){
@@ -422,59 +435,132 @@
 
 //___________________________________________________________________________________SUR CLICK BUTTON ROUGE_______________
 
-    var monTextHTML = ["<p id=\"line1\"><span style=\"color:red\">&#60; h2 &#62;</span>Languages informatiques front-ends &#60; /h2 &#62;</p>"+
-                        "<p id=\"line2\">&#60; ul &#62;</p>"+
-      /*  P  */         "<p id=\"line3\">&#60; li &#62;</p>"+
-      /*  A  */         "<p id=\"line4\">&#60; a href=\"#\"&#62;</p>"+
-      /*  R  */         "<p id=\"line5\">&#60; img src=\"jsl_0.png\" &#62;</p>"+
-      /*  T  */         "<p id=\"line6\">&#60; /a &#62;</p>"+
-      /*  I  */         "<p id=\"line7\">&#60; /li &#62;</p>"+
-      /*  E  */         "<p id=\"line8\">&#60; a href=\"#\" &#62;</p>"+
-                        "<p id=\"line9\">&#60; img src=\"html.png\" &#62;</p>"+
-      /*  1  */         "<p id=\"line10\">&#60; /a &#62;</p>"+
-                        "<p id=\"line11\">&#60; /li &#62;</p>"+
-                        "<p id=\"line12\">&#60; li &#62;</p>"+
-                        "<p id=\"line13\">&#60; a href=\"#\" &#62;</p>"+
-                        "<p id=\"line14\">&#60; img src=\"css3.png\" &#62;</p>"+
-                        "<p id=\"line15\">&#60; /a &#62;</p>"+
-                        "<p id=\"line16\">&#60; /li &#62;</p>"+
-                        "<p id=\"line17\">&#60; /ul &#62;</p>",
-
-                        "<p id=\"line1\">&#60; div &#62;</p>"+
-                        "<p id=\"line2\">&#60; p &#62;css3 forment un langage informatique qui decrit la presentation des documents HTML et XML&#60; /p &#62;</p>"+
-                        "<p id=\"line3\">&#60; /div &#62;</p>"+
-                        "<p id=\"line4\">&#60; p &#62;survolez-moi pour en savoir plus&#60; /p &#62;</p>",
-
-                        "<a href =\"https://github.com/simplon-linap/transition/archive/master.zip\" id=\"line1\">"+
-                        "<span style=\"color:#FFF;font-size=1em\">"+
-                        "Cliquez ici pour télécharger le fichier HTML"+
-                        "</span></a>"];
-
-    var explication = ["Dans une liste, créez 3 liens contenant chacun une image.",
-                       "A la suite de chaque image, créez sa légende dans un div et la consigne ensuite.",
-                       "Aucune modification à cette étape :)"]
-
     function afficheHTML(i){
+      var monTextHTML = ["<p><span style=\"color:red\">&#60; h2 &#62;</span> Languages informatiques front-ends &#60; /h2 &#62;</p>"+
+                          "<p>&#60; ul &#62;</p>"+
+                          "<p>"+space.x1+" &#60; li &#62;</p>"+
+                          "<p>"+space.x2+"&#60; a href=\"#\"&#62;</p>"+
+                          "<p>"+space.x3+"&#60; img src=\"jsl_0.png\" &#62;</p>"+
+                          "<p>"+space.x2+"&#60; /a &#62;</p>"+
+        /*  P  */         "<p>"+space.x1+"&#60; /li &#62;</p>"+
+        /*  A  */         "<p>"+space.x1+"&#60; li &#62;</p>"+
+        /*  R  */         "<p>"+space.x2+"&#60; a href=\"#\" &#62;</p>"+
+        /*  T  */         "<p>"+space.x3+"&#60; img src=\"html.png\" &#62;</p>"+
+        /*  I  */         "<p>"+space.x2+"&#60; /a &#62;</p>"+
+        /*  E  */         "<p>"+space.x1+"&#60; /li &#62;</p>"+
+                          "<p>"+space.x1+"&#60; li &#62;</p>"+
+        /*  1  */         "<p>"+space.x2+"&#60; a href=\"#\" &#62;</p>"+
+                          "<p>"+space.x3+"&#60; img src=\"css3.png\" &#62;</p>"+
+                          "<p>"+space.x2+"&#60; /a &#62;</p>"+
+                          "<p>"+space.x1+"&#60; /li &#62;</p>"+
+                          "<p>&#60; /ul &#62;</p>",
+
+                          "<p>&#60; div &#62;</p>"+
+                          "<p>&#60; p &#62;css3 forment un langage informatique qui decrit</p>"+
+                          "<p>la presentation des documents HTML et XML&#60; /p &#62;</p>"+
+                          "<p>&#60; /div &#62;</p>"+
+                          "<p>&#60; p &#62;survolez-moi pour en savoir plus&#60; /p &#62;</p>",
+
+                          "<a href =\"https://github.com/simplon-linap/transition/archive/master.zip\" id=\"download\">"+// -----------CHANGER LIEN DE DOWNLOAD
+                          "<p>Cliquez ici pour télécharger </p><p> le fichier HTML</p></a>"];
+
+      var explicationHTML = ["Dans une liste, créez 3 liens contenant chacun une image.",
+                         "A la suite de chaque image, créez sa légende dans une div et la consigne ensuite.",
+                         "Aucune modification à cette étape :)"]
+
       var monText = monTextHTML[i-1];
       codeContent[i-1].innerHTML="<div class=\"codeContent\">"+
-                                "<p class=\"explication\">"+explication[i-1]+"</p>"+
-                                "<div class=\"scroll\" id=\"textScroll"+i+"\">"+monText+"</div></div>";
+                                 "<p class=\"explication\">"+explicationHTML[i-1]+"</p>"+
+                                 "<div class=\"scroll\" id=\"textScroll"+i+"\">"+monText+"</div></div>";
     }
-//___________________________________________________________________________________SUR CLICK BUTTON ROUGE_______________
+//___________________________________________________________________________________SUR CLICK BUTTON JAUNE_______________
+
     function afficheCSS(i){
-      codeContent[i-1].innerHTML="<div class=\"codeContent\">"+
-                            "<p class=\"explication\">Balisage</p><div class=\"scroll\" id=\"textScroll"+i+"\"></div></div>";
-      var textScroll = document.getElementById("textScroll"+i);
+      var monTextCSS = ["<p>*,*:before,*:after{</p>"+
+                        "<p>&emsp;&emsp;padding: 0px;</p>"+
+                        "<p>&emsp;&emsp;margin: 0px;</p>"+
+                        "<p>&emsp;&emsp;box-sizing: content-box;</p>"+
+                        "<p>}</p>"+
+                        "<p>h2{</p>"+
+                        "<p>&emsp;&emsp;color: white;</p>"+
+                        "<p>&emsp;&emsp;background-color: gray;</p>"+
+                        "<p>&emsp;&emsp;text-align: center;</p>"+
+                        "<p>}</p>"+
+                        "<p>li{</p>"+
+                        "<p>  display: inline-flex;</p>"+
+                        "<p>  width:400px;</p>"+
+                        "<p>  height:400px;</p>"+
+                        "<p>  list-style:none;</p>"+
+                        "<p>}</p>"+
+                        "<p>li:hover{</p>"+
+                        "<p>  width: 400px;</p>"+
+                        "<p>  height:300px;</p>"+
+                        "<p>}</p>"+
+                        "<p>a{</p>"+
+                        "<p>  width:300px;height:350px;</p>"+
+                        "<p>  flex-direction: row;</p>"+
+                        "<p>  flex-flow: row;</p>"+
+                        "<p>  text-align: center;</p>"+
+                        "<p>  text-decoration: none;</p>"+
+                        "<p>}</p>"+
+                        "<p>img{</p>"+
+                        "<p>  width:200px;height:300px;</p>"+
+                        "<p>}</p>",
 
-          textScroll.textContent="CSS";
+                        "<p>ul li a:hover{</p>"+
+                        "<p>position: absolute;</p>"+
+                        "<p>width:300px;</p>"+
+                        "<p>height:0px;</p>"+
+                        "<p>}</p>"+
+                        "<p>ul li a div {</p>"+
+                        "<p>text-align: center;</p>"+
+                        "<p>visibility: collapse;</p>"+
+                        "<p>ul li a:hover div {</p>"+
+                        "<p>position: absolute</p>"+
+                        "<p>text-decoration: none;</p>"+
+                        "<p>border:6px solid red;</p>"+
+                        "<p>height: 200px;</p>"+
+                        "<p>width: 300px;</p>"+
+                        "<p>color:white;</p>"+
+                        "<p>background-color:black;</p>"+
+                        "<p>visibility: visible;</p>"+
+                        "<p>}</p>"+
+                        "<p>ul li a:not(:hover) p{</p>"+
+                        "<p>margin-top: -15px;</p>"+
+                        "<p>visibility: visible;</p>"+
+                        "<p>color: black;</p>"+
+                        "<p>white-space: 0px;</p>"+
+                        "<p>}</p>"+
+                        "<p>ul li a:hover p{</p>"+
+                        "<p>visibility: collapse;</p>"+
+                        "<p>}</p>"+
+                        "<p>ul li a:hover img{</p>"+
+                        "<p>position: absolute;</p>"+
+                        "<p>width:100px;</p>"+
+                        "<p>height:100px;</p>"+
+                        "<p>padding-top: 100px;</p>"+
+                        "<p>z-index: 10;</p>"+
+                        "<p>}</p>"+
+                        "<p>h2 span {</p>"+
+                        "<p>visibility: collapse;</p>"+
+                        "<p>}</p>"+
+                        "<p>h2:hover span{</p>"+
+                        "<p>visibility: visible;</p>"+
+                        "<p>}</p>",
+
+                        "blab"];
+
+
+      var monText = monTextCSS[i-1];
+
+      var explicationCSS = ["blob", "blub","blab" ];
+      codeContent[i-1].innerHTML="<div class=\"codeContent\">"+
+                                 "<p class=\"explication\">"+explicationCSS[i-1]+"</p>"+
+                                 "<div class=\"scroll\" id=\"textScroll"+i+"\">"+monText+"</div></div>";
     }
-//___________________________________________________________________________________FONTION AFFICHE RENDU_______________
+//___________________________________________________________________________________SUR CLICK BUTTON VERT_______________
     function afficheRENDU(i){
-      codeContent[i-1].innerHTML="<div class=\"codeContent\">"+
-                            "<p class=\"explication\">Balisage</p><div class=\"scroll\" id=\"textScroll"+i+"\"></div></div>";
-      var textScroll = document.getElementById("textScroll"+i);
-
-          textScroll.textContent="RENDU";
+      codeContent[i-1].innerHTML="";
     }
     </script>
   </body>
