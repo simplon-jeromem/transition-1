@@ -311,11 +311,19 @@
         </div>
         <div class="fond1">
           <content id="contenu">
-            <p class="question">Comment fonctionne une transition ?</p>
-            <p class="text1_1">lorem ipsum（ロレム・イプサム、略してリプサム lipsum ともいう）とは、出版、ウェブデザイン、グラフィックデザインなどの諸分野において使用されている典型的なダミーテキスト。書籍やウェブページや広告などのデザインのプロトタイプを制作したり顧客にプレゼンテーションしたりする際に、まだ正式な文章の出来上がっていないテキスト部分の書体（フォント）、タイポグラフィ、レイアウトなどといった視覚的なデザインを調整したりわかりやすく見せるために用いられる</p>
-            <p class="text1_1">lorem ipsum（ロレム・イプサム、略してリプサム lipsum ともいう）とは、出版、ウェブデザイン、グラフィックデザインなどの諸分野において使用されている典型的なダミーテキスト。書籍やウェブページや広告などのデザインのプロトタイプを制作したり顧客にプレゼンテーションしたりする際に、まだ正式な文章の出来上がっていないテキスト部分の書体（フォント）、タイポグラフィ、レイアウトなどといった視覚的なデザインを調整したりわかりやすく見せるために用いられる</p>
+            <p class="question">Qu'est-ce qu'une transition ?</p>
+            <p class="text1_1">Une transition est la gestion du passage d'un etat A à un etat B déclenché par une action utilisateur.
+                              C'est tout simplement le changement d'état progressif d'une propriété CSS d'un état
+                              initial vers un état final voulu. La transition permet de dymamiser visuellement un site web. La
+                              transition met en valeur les actions utilisateurs en les rendant dynamiques.
+            </p>
+            <p class="text1_1">La transition peut se rapporcher d'une transformation utilisée par la propriété "transform", qui permet
+                              de faire entre autre des rotations (mais nous en parlerons pas car peu utilisé) .La transition peut également
+                              être faite en javascript mais il est plus simple de passer avec du CSS. La transition est presque toujours
+                              déclenchée par un pseudo­class que nous vous expliquerons par la suite.
+            </p>
+            <button class="button1" onclick="next()">suivant</button>
           </content>
-          <button class="button1" onclick="next()">suivant</button>
         </div>
       </div>
     </section>
@@ -391,26 +399,85 @@
               ************************************************************************************-->
     <script>
     var space = {x1:"&emsp;",x2:"&emsp;&emsp;", x3:"&emsp;&emsp;&emsp;", x4:"&emsp;&emsp;&emsp;&emsp;"};
+    var color = {red :"<span style=\"color:#C94C4C\">",
+                 orange:"<span style=\"color:#EEB353\">",
+                 green:"",blue:"",
+                 violet:"<span style=\"color:#B23ADD\">",close:"</span>"};
 
     var contenuText = document.getElementById("contenu");
 //___________________________________________________________________________________BUTTON NEXT 1_______________
     function next(){
       contenuText.innerHTML="<p class=\"question\">Qu'est-ce que les \"pseudo-classes\" ?</p>"+
-                            "<p class=\"text1_2\">Йн ентэгры лыгэндоч пырикюлёз векж, ед вэл мютат ёнвидюнт опортэры. Эвэртё дигнижжим йн жят, ан квюод примич аккюжамюз ыам. Ку вэл дёко мэдиокретатым, ут нам ведят либриз. Ыт мыдиокрым дигнижжим шэа, зыд путант альяквюам эррорибуз ты. Квюо ут фырре лыгэндоч."+
-                            "<p class=\"text1_2\">Йн ентэгры лыгэндоч пырикюлёз векж, ед вэл мютат ёнвидюнт опортэры. Эвэртё дигнижжим йн жят, ан квюод примич аккюжамюз ыам. Ку вэл дёко мэдиокретатым, ут нам ведят либриз. Ыт мыдиокрым дигнижжим шэа, зыд путант альяквюам эррорибуз ты. Квюо ут фырре лыгэндоч."+
-                            "<button class=\"button2\"onclick=\"previous()\">précédent</button>"/*+
-                            "<button class="+"\"button1\""+ "onclick="+"\"nextAgain()\""+">suivant</button>"*/;
+                            "<p class=\"text1_2\">Elle sont appelle comme ca car elle rappelle les class en javascript dans leurs ecrtures .les pseudo-"+
+                                                  "class sont toujours précédé d'un élement et certaine entre elles prendrent des parametres"+
+                                                  "comme :not() . Il permet de definir les propriétés de chaque etat de element choisi selon sa position"+
+                                                  "son etat.Il permet definir des particulatiés pour chaque élément .Les pseudo class écrivent avec"+
+                                                  "comme ca :element:pseudo­class.</p>"+
+                            "<p class=\"text1_2\">Quelque exemple de pseudo­class"+
+                                                  "La pseudo class:link permet de sélectionner les liens au sein d'autres éléments. Elle sélectionnera"+
+                                                  "tout lien n'ayant pas été visité."+
+                                                  "La pseudo class:actived permet de définir l'apparence d'un élément au moment exact où"+
+                                                  "l'utilisateur clique dessus. Cela permet de donner un retour sur l'action, montrant que le navigateur"+
+                                                  "a bien compris la demande."+
+                                                  "La pseudo class:hover permet de spécifier l'apparence d'un élément au moment où l'utilisateur"+
+                                                  "passe la souris dessus, mais sans nécessairement l'activer."+
+                                                  "La pseudo class visited permet de modifier l'aspect d'un lien une fois que l'utilisateur l'a visité."+
+                                                  "La pseudo class:not() prend un sélecteur comme argument. Elle sert à exclure les éléments qui ne"+
+                                                  "sont pas concernés par le sélecteur en argument.</p>"+
+                            "<button class=\"button2\"onclick=\"previous()\">précédent</button>"+
+                            "<button class="+"\"button1\""+ "onclick="+"\"nextAgain()\""+">suivant</button>";
 
     }
 //___________________________________________________________________________________BUTTON PREVIOUS 1_______________
     function previous(){
-      contenuText.innerHTML="<p class=\"question\">Comment fonctionne une transition ?</p>"+
-                            "<p class=\"text1_1\">lorem ipsum（ロレム・イプサム、略してリプサム lipsum ともいう）とは、出版、ウェブデザイン、グラフィックデザインなどの諸分野において使用されている典型的なダミーテキスト。書籍やウェブページや広告などのデザインのプロトタイプを制作したり顧客にプレゼンテーションしたりする際に、まだ正式な文章の出来上がっていないテキスト部分の書体（フォント）、タイポグラフィ、レイアウトなどといった視覚的なデザインを調整したりわかりやすく見せるために用いられる</p>"+
-                            "<p class=\"text1_1\">lorem ipsum（ロレム・イプサム、略してリプサム lipsum ともいう）とは、出版、ウェブデザイン、グラフィックデザインなどの諸分野において使用されている典型的なダミーテキスト。書籍やウェブページや広告などのデザインのプロトタイプを制作したり顧客にプレゼンテーションしたりする際に、まだ正式な文章の出来上がっていないテキスト部分の書体（フォント）、タイポグラフィ、レイアウトなどといった視覚的なデザインを調整したりわかりやすく見せるために用いられる</p>"+
+      contenuText.innerHTML="<p class=\"question\">Qu'est-ce qu'une transition ?</p>"+
+                            "<p class=\"text1_1\">Une transition est la gestion du passage d'un etat A à un etat B déclenché par une action utilisateur."+
+                                                  "C'est tout simplement le changement d'état progressif d'une propriété CSS d'un état"+
+                                                  "initial vers un état final voulu. La transition permet de dymamiser visuellement un site web. La"+
+                                                  "transition met en valeur les actions utilisateurs en les rendant dynamiques.</p>"+
+                            "<p class=\"text1_1\">La transition peut se rapporcher d'une transformation utilisée par la propriété \"transform\", qui permet"+
+                                                  "de faire entre autre des rotations (mais nous en parlerons pas car peu utilisé) .La transition peut également"+
+                                                  "être faite en javascript mais il est plus simple de passer avec du CSS. La transition est presque toujours"+
+                                                  "déclenchée par un pseudo­class que nous vous expliquerons par la suite.</p>"+
                             "<button class=\"button1\"onclick=\"next()\">suivant</button>";
     }
-    function nextAgain(){console.log("nextAgain");}
+    function nextAgain(){console.log("nextAgain");
+      contenuText.innerHTML="<p class=\"question\">Comment ça fonctionne ?</p>"+
+                            "<p class=\"text1_2\">Une transition est definie par trois propriété définir obligatoire les propriété consermé le temps de la"+
+                                                  "transition et le types de transition et undelai entre le changement état et la transition .Une transition"+
+                                                  "écrit comme :</p>"+
+                            "<p class=\"text1_2\">Les propriété de la transition (transition­property: propriété css)"+
+                                                  "La durée (transition­duration:durée en s)"+
+                                                  "le types (transition­timing­function: types de transition)"+
+                                                  "le delai (transition­delay:durée en s)"+
+                                                  "elles peuvent etre regroupée dans une propriété transition qui écrit come ca :"+
+                                                  "transition propriété durée type delai</p>"+
+                            "<button class=\"button2\"onclick=\"previousAgain()\">précédent</button>"+
+                            "<button class="+"\"button1\""+ "onclick="+"\"previous()\""+">retour</button>";
+    }
 
+    function previousAgain(){
+      contenuText.innerHTML="<p class=\"question\">Qu'est-ce que les \"pseudo-classes\" ?</p>"+
+                            "<p class=\"text1_2\">Elle sont appelle comme ca car elle rappelle les class en javascript dans leurs ecrtures .les pseudo-"+
+                                                  "class sont toujours précédé d'un élement et certaine entre elles prendrent des parametres"+
+                                                  "comme :not() . Il permet de definir les propriétés de chaque etat de element choisi selon sa position"+
+                                                  "son etat.Il permet definir des particulatiés pour chaque élément .Les pseudo class écrivent avec"+
+                                                  "comme ca :element:pseudo­class.</p>"+
+                            "<p class=\"text1_2\">Quelque exemple de pseudo­class"+
+                                                  "La pseudo class:link permet de sélectionner les liens au sein d'autres éléments. Elle sélectionnera"+
+                                                  "tout lien n'ayant pas été visité."+
+                                                  "La pseudo class:actived permet de définir l'apparence d'un élément au moment exact où"+
+                                                  "l'utilisateur clique dessus. Cela permet de donner un retour sur l'action, montrant que le navigateur"+
+                                                  "a bien compris la demande."+
+                                                  "La pseudo class:hover permet de spécifier l'apparence d'un élément au moment où l'utilisateur"+
+                                                  "passe la souris dessus, mais sans nécessairement l'activer."+
+                                                  "La pseudo class visited permet de modifier l'aspect d'un lien une fois que l'utilisateur l'a visité."+
+                                                  "La pseudo class:not() prend un sélecteur comme argument. Elle sert à exclure les éléments qui ne"+
+                                                  "sont pas concernés par le sélecteur en argument.</p>"+
+                            "<button class=\"button2\"onclick=\"previous()\">précédent</button>"+
+                            "<button class="+"\"button1\""+ "onclick="+"\"nextAgain()\""+">suivant</button>";
+
+    }
 
 //___________________________________________________________________________________SUR CLICK GHOST_______________
     function afficheStep(){
@@ -476,35 +543,41 @@
 //___________________________________________________________________________________SUR CLICK BUTTON JAUNE_______________
 
     function afficheCSS(i){
-      var monTextCSS = ["<p>*,*:before,*:after{</p>"+
-                        "<p>&emsp;&emsp;padding: 0px;</p>"+
-                        "<p>&emsp;&emsp;margin: 0px;</p>"+
-                        "<p>&emsp;&emsp;box-sizing: content-box;</p>"+
+      var monTextCSS = ["<p>"+color.red+"*"+color.close+
+                              color.violet+", "+color.close+
+                              color.red+"*"+color.close+
+                              color.orange+":before"+color.close+
+                              color.violet+", "+color.close+
+                              color.red+"*"+color.close+
+                              color.orange+":after"+color.close+" {</p>"+
+                        "<p>"+space.x1+"padding: "+color.orange+"0px"+color.close+";</p>"+
+                        "<p>"+space.x1+"margin: "+color.orange+"0px"+color.close+";</p>"+
+                        "<p>"+space.x1+"box-sizing: content-box;</p>"+
                         "<p>}</p>"+
-                        "<p>h2{</p>"+
-                        "<p>&emsp;&emsp;color: white;</p>"+
-                        "<p>&emsp;&emsp;background-color: gray;</p>"+
-                        "<p>&emsp;&emsp;text-align: center;</p>"+
+                        "<p>h2 {</p>"+
+                        "<p>"+space.x1+"color: white;</p>"+
+                        "<p>"+space.x1+"background-color: gray;</p>"+
+                        "<p>"+space.x1+"text-align: center;</p>"+
                         "<p>}</p>"+
-                        "<p>li{</p>"+
-                        "<p>  display: inline-flex;</p>"+
-                        "<p>  width:400px;</p>"+
-                        "<p>  height:400px;</p>"+
-                        "<p>  list-style:none;</p>"+
+                        "<p>li {</p>"+
+                        "<p>"+space.x1+"display: inline-flex;</p>"+
+                        "<p>"+space.x1+"width:400px;</p>"+
+                        "<p>"+space.x1+"height:400px;</p>"+
+                        "<p>"+space.x1+"list-style:none;</p>"+
                         "<p>}</p>"+
                         "<p>li:hover{</p>"+
-                        "<p>  width: 400px;</p>"+
-                        "<p>  height:300px;</p>"+
+                        "<p>"+space.x1+"width: 400px;</p>"+
+                        "<p>"+space.x1+"height:300px;</p>"+
                         "<p>}</p>"+
-                        "<p>a{</p>"+
-                        "<p>  width:300px;height:350px;</p>"+
-                        "<p>  flex-direction: row;</p>"+
-                        "<p>  flex-flow: row;</p>"+
-                        "<p>  text-align: center;</p>"+
-                        "<p>  text-decoration: none;</p>"+
+                        "<p>a {</p>"+
+                        "<p>"+space.x1+"width:300px;height:350px;</p>"+
+                        "<p>"+space.x1+"flex-direction: row;</p>"+
+                        "<p>"+space.x1+"flex-flow: row;</p>"+
+                        "<p>"+space.x1+"text-align: center;</p>"+
+                        "<p>"+space.x1+"text-decoration: none;</p>"+
                         "<p>}</p>"+
-                        "<p>img{</p>"+
-                        "<p>  width:200px;height:300px;</p>"+
+                        "<p>img {</p>"+
+                        "<p>"+space.x1+"width:200px;height:300px;</p>"+
                         "<p>}</p>",
 
                         "<p>ul li a:hover{</p>"+
