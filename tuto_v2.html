@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tutoriel TRANSITION</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+  </head><!--**************************************************************************************
+        |                                                                           CSS          |
+        *****************************************************************************************-->
+    <style>
+    body {
+      background-color: #3498DB;
+      margin: 0;
+      padding: 0;
+    }
+    *{
+      transition: all 700ms cubic-bezier(0.525, -0.580, 0.790, 1.420);
+    }
+    .section1, .section2 {
+      width: 100%;
+      height: 100%;
+    }
+    .section2{
+      margin: 5% 0%;
+    }/*_______________________________________________________________________*/
+    /*__________________________________________________________SECTION 1_____*/
+
+    .container1 {/*______________________POSITION GHOST 1_____*/
+      position: absolute;
+      margin-left: 6%;
+      margin-top: 6%;
+    }
+    .ghost1 {/*___________________________TAILLE GHOST 1______*/
+      animation: float 3s ease-out infinite;
+      width: 60%;
+      height: 60%;
+    }
+
+    @keyframes float {/*_____________________ANIM GHOST 1_____*/
+        50% {
+        transform: translate(0, 20px);
+      }
+    }
+    .shadowFrame1 {/*______________________TAILLE OMBRE 1_____*/
+      width: 45%;
+      margin-top: 20px;
+      margin-left: 4%;
+    }
+    .shadow {
+      animation: shrink 3s ease-out infinite;
+      transform-origin: center center;
+      ellipse {
+          transform-origin: center center;
+      }
+    }
+
+    @keyframes shrink {/*____________________ANIM OMBRE 1_____*/
+      0% {
+        width: 60%;
+        margin: 0 25%;
+      }
+      50% {
+        width: 100%;
+        margin: 0 5%;
+      }
+      100% {
+        width: 60%;
+        margin: 0 25%;
+      }
+    }
+    .contour1 {/*_______________________________BULLE 1______*/
+      margin: 8% 40%;
+      background-color: transparent;
+      width: 55%;
+      height: 450px;
+      border-radius: 40px;
+      border: 15px solid #120756;
+    }
+    .fond1{
+      margin: 0% 0% 0% 2%;/*haut,bas,droite,gauche*/
+      background-color: #FFF;
+      width: 98%;
+      height: 97%;;
+      border-radius: 7px 20px 10px 20px;
+    }
+    .question{/*_____________________________CONTENU 1.1_____*/
+      color:#120756;
+      font-size: 2.5em;
+      font-weight: bold;
+      padding: 1% 5%;
+    }
+    .text1_1, .text1_2 {/*___________________CONTENU 1.2_____*/
+      padding: 2% 5%;
+    }
+    .button1, .button2{/*________________________BUTTON _____*/
+      position: absolute;
+      background-color: #120756;
+      width: 60px;
+      height: 30px;
+      margin: 1% 0% 0% 46%;/*haut,bas,droite,gauche*/
+      padding: 4px;
+      color:#FFF;
+      text-align: center;
+      border-radius: 8px;
+      border: 1px solid #120756;
+    }
+    .button2 {
+      width:80px;
+      margin: 1% 0% 0% 40%;/*haut,bas,droite,gauche*/
+    }
+    .smallBulle1 {/*______________________PETITES BULLES______*/
+      position: absolute;
+      background-color: #FFF;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      margin: 16%;
+      left: 14.5%;
+      border: 2px solid rgba(18, 7, 86, 0.5);
+    }
+    .smallBulle2 {
+      position: absolute;
+      background-color: #FFF;
+      width: 30px;
+      height: 30px;
+      border-radius: 30px;
+      margin: 14%;
+      left: 18.6%;
+      border: 4px solid rgba(18, 7, 86, 0.7);
+    }
+    .smallBulle3 {
+      position: absolute;
+      background-color: #FFF;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      margin: 11%;
+      left: 24.6%;
+      border: 6px solid rgba(18, 7, 86, 0.9);
+    }
+      /*________________________________________________________SECTION 2_____*/
+    .container2 {/*______________________POSITION GHOST 2_____*/
+      padding: 15% 0% 18% 0%;/*haut,bas,droite,gauche*/
+    }
+    #ghost2 {/*___________________________TAILLE GHOST 2______*/
+      animation: float 3s ease-out infinite;
+      width: 40%;
+      height: 40%;
+    }
+    #ghost2:hover {
+      cursor: help;
+    }
+    .shadowFrame2 {/*______________________TAILLE OMBRE 2_____*/
+      width: 35%;
+      margin-top: 20px;
+      margin-left: 1%;
+    }
+    .speak {
+      width: 40%;
+      height: 40%;
+      margin-top: -20%;
+      margin-left: 20%;
+      animation: float 3s ease-out infinite;
+    }
+    .clickMe{
+      color:#FFF;
+      font-weight: bold;
+      font-size: 1.3em;
+      margin-bottom: 4%;
+      margin-left: 23%;
+      animation: float 3s ease-out infinite;
+    }
+    .contour2_1, .contour2_2, .contour2_3 {/*____BULLE 2______*/
+      margin: 35% 0% 30% 60%;/*haut,bas,droite,gauche*/
+      padding: 3% 0% 0% 0%;
+      background-color: #FFF;
+      width: 100px;
+      height: 100px;
+      border-radius: 100px;
+      text-align: center;
+      font-size: 4em;
+      color: #3498DB;
+      background-color: transparent;
+      border: 4px solid #FFF;
+      opacity: 0;
+    }
+    .contour2_2{
+      margin: 35% 20% 10% 30%;
+    }
+    .fond2 {
+      position: relative;
+      background-color: #FFF;
+      width: 85px;
+      height: 85px;
+      border-radius: 85px;
+      margin: -5.5% 3.5%;
+    }
+    .step1, .step2, .step3 {
+      margin: 3% 0% 0% 25%;/*haut,bas,droite,gauche*/
+      padding: 0% 0% 0% 0%;
+      background-color: #FFF;
+      width: 80%;
+      height: 195px;
+      border-radius: 8px;
+      font-size: 4em;
+      opacity: 0;
+    }
+    .step1{
+      margin: 10% 0% 0% 25%;/*haut,bas,droite,gauche*/
+    }
+    .step2{
+      margin: 3% 0% 0% 10%;/*haut,bas,droite,gauche*/
+    }
+    .onglet {
+      position: relative;
+      display:flex;
+      background-color: #848484;
+      height: 30px;
+      width: 100%;
+      border-radius: 8px 8px 0px 0px;
+      padding-left: 3%;
+
+    }
+    .buttonHtml, .buttonCss, .buttonApercu {/*___BOUTONS STEP_____*/
+      position: relative;
+      width: 15px;
+      height: 15px;
+      border-radius: 15px;
+      border: 1px solid #848484;
+      margin: 1.5% 3% 0% 0%;
+
+    }
+    .buttonHtml {
+      background-color: red;
+    }
+    .buttonCss {
+      background-color: yellow;
+    }
+    .buttonApercu {
+      background-color: green;
+    }
+    .info {/*________________________________INFOBULLE_____*/
+      position: absolute;
+      margin-top:23px;
+      margin-left:-35px;
+      padding: 10%;
+      width: 60px;
+      font-size: 0.2em;
+      color:#FFF;
+      background:rgba(0,0,0,.9);
+      padding:5px;
+      border-radius:5px;
+      box-shadow:0 0 2px rgba(0,0,0,.5);
+      transform:scale(0) rotate(-12deg);
+      transition:all .25s;
+      opacity:0;
+    }
+    button:hover span {
+      transform:scale(1) rotate(0);
+      opacity:1;
+    }
+    .codeContent{
+      width: 100%;
+      height: 100%;
+      padding: 2%;
+    }
+    .scroll {/*_____________________________TEXTE CODE_____*/
+      width: 100%;
+      height: 100px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      font-size: 0.25em;
+      background-color: #373737;
+      color: #FFF;
+      padding: 0% 10%;
+    }
+    .explication {/*______________________LEGENDE CODE_____*/
+      font-size: 0.3em;
+    }
+    </style>
+  <body><!--***************************************************************************************
+        |                                                                           HTML          |
+        ***************************************************************************************-->
+    <section class="section1"><!--_____________________________SECTION 1_____-->
+      <div class="container1">
+        <img src="ghost.png" class="ghost1">
+        <p class="shadowFrame1">
+          <img class = "shadow" src="shadow.png">
+        </p>
+      </div>
+      <div class="contour1"><!--_____BULLE 1___-->
+        <div>
+          <div class="smallBulle1"></div>
+          <div class="smallBulle2"></div>
+          <div class="smallBulle3"></div>
+        </div>
+        <div class="fond1">
+          <content id="contenu">
+            <p class="question">Comment fonctionne une transition ?</p>
+            <p class="text1_1">lorem ipsum（ロレム・イプサム、略してリプサム lipsum ともいう）とは、出版、ウェブデザイン、グラフィックデザインなどの諸分野において使用されている典型的なダミーテキスト。書籍やウェブページや広告などのデザインのプロトタイプを制作したり顧客にプレゼンテーションしたりする際に、まだ正式な文章の出来上がっていないテキスト部分の書体（フォント）、タイポグラフィ、レイアウトなどといった視覚的なデザインを調整したりわかりやすく見せるために用いられる</p>
+            <p class="text1_1">lorem ipsum（ロレム・イプサム、略してリプサム lipsum ともいう）とは、出版、ウェブデザイン、グラフィックデザインなどの諸分野において使用されている典型的なダミーテキスト。書籍やウェブページや広告などのデザインのプロトタイプを制作したり顧客にプレゼンテーションしたりする際に、まだ正式な文章の出来上がっていないテキスト部分の書体（フォント）、タイポグラフィ、レイアウトなどといった視覚的なデザインを調整したりわかりやすく見せるために用いられる</p>
+          </content>
+          <button class="button1" onclick="next()">suivant</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section2"><!--____________________________SECTION 2_______-->
+      <div class="col-md-6"><!--_____BLOC CODE___-->
+        <div class="step1" id="blocCode1">
+          <div class="onglet">
+            <button class="buttonHtml" onclick="afficheHTML(1)"><span class="info">HTML</span></button>
+            <button class="buttonCss" onclick="afficheCSS(1)"><span class="info">CSS</span></button>
+            <button class="buttonApercu" onclick="afficheRENDU(1)"><span class="info">APERÇU</span></button>
+          </div>
+          <div id="contenu2_1">
+          </div>
+        </div>
+        <div class="step2" id="blocCode2">
+          <div class="onglet">
+            <button class="buttonHtml" onclick="afficheHTML(2)"><span class="info">HTML</span></button>
+            <button class="buttonCss" onclick="afficheCSS(2)"><span class="info">CSS</span></button>
+            <button class="buttonApercu" onclick="afficheRENDU(2)"><span class="info">APERÇU</span></button>
+          </div>
+          <div id="contenu2_2">
+            <p></p>
+          </div>
+        </div>
+        <div class="step3" id="blocCode3">
+          <div class="onglet">
+            <button class="buttonHtml" onclick="afficheHTML(3)"><span class="info">HTML</span></button>
+            <button class="buttonCss" onclick="afficheCSS(3)"><span class="info">CSS</span></button>
+            <button class="buttonApercu" onclick="afficheRENDU(3)"><span class="info">APERÇU</span></button>
+          </div>
+          <div id="contenu2_3">
+            <p></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3"><!--_____NUMERO ÉTAPE___-->
+        <content>
+          <div class="contour2_1" id="number1">
+            <div class="fond2">
+              <p>1</p>
+            </div>
+          </div>
+        </content>
+        <content>
+          <div class="contour2_2" id="number2">
+            <div class="fond2">
+              <p>2</p>
+            </div>
+          </div>
+        </content>
+        <content>
+          <div class="contour2_3" id="number3">
+            <div class="fond2">
+              <p>3</p>
+            </div>
+          </div>
+        </content>
+      </div>
+      <div class="container2 col-md-3"><!--_____MINI-GHOST___-->
+        <p class="clickMe">Cliquez-moi !</p><img src="bulle.png" class="speak">
+        <img src="ghost.png" id="ghost2" onclick="afficheStep()">
+        <p class="shadowFrame2">
+          <img class = "shadow" src="shadow.png">
+        </p>
+      </div>
+    </section><!--*************************************************************************************
+              |                                                                     JAVASCRIPT       |
+              ************************************************************************************-->
+    <script>
+    var contenuText = document.getElementById("contenu");
+
+    function next(){
+      contenuText.innerHTML="<p class=\"question\">Qu'est-ce que les \"pseudo-classes\" ?</p>"+
+                            "<p class=\"text1_2\">Йн ентэгры лыгэндоч пырикюлёз векж, ед вэл мютат ёнвидюнт опортэры. Эвэртё дигнижжим йн жят, ан квюод примич аккюжамюз ыам. Ку вэл дёко мэдиокретатым, ут нам ведят либриз. Ыт мыдиокрым дигнижжим шэа, зыд путант альяквюам эррорибуз ты. Квюо ут фырре лыгэндоч."+
+                            "<p class=\"text1_2\">Йн ентэгры лыгэндоч пырикюлёз векж, ед вэл мютат ёнвидюнт опортэры. Эвэртё дигнижжим йн жят, ан квюод примич аккюжамюз ыам. Ку вэл дёко мэдиокретатым, ут нам ведят либриз. Ыт мыдиокрым дигнижжим шэа, зыд путант альяквюам эррорибуз ты. Квюо ут фырре лыгэндоч."+
+                            "<button class=\"button2\"onclick=\"previous()\">précédent</button>"/*+
+                            "<button class="+"\"button1\""+ "onclick="+"\"nextAgain()\""+">suivant</button>"*/;
+
+    }
+    function previous(){
+      contenuText.innerHTML="<p class=\"question\">Comment fonctionne une transition ?</p>"+
+                            "<p class=\"text1_1\">lorem ipsum（ロレム・イプサム、略してリプサム lipsum ともいう）とは、出版、ウェブデザイン、グラフィックデザインなどの諸分野において使用されている典型的なダミーテキスト。書籍やウェブページや広告などのデザインのプロトタイプを制作したり顧客にプレゼンテーションしたりする際に、まだ正式な文章の出来上がっていないテキスト部分の書体（フォント）、タイポグラフィ、レイアウトなどといった視覚的なデザインを調整したりわかりやすく見せるために用いられる</p>"+
+                            "<p class=\"text1_1\">lorem ipsum（ロレム・イプサム、略してリプサム lipsum ともいう）とは、出版、ウェブデザイン、グラフィックデザインなどの諸分野において使用されている典型的なダミーテキスト。書籍やウェブページや広告などのデザインのプロトタイプを制作したり顧客にプレゼンテーションしたりする際に、まだ正式な文章の出来上がっていないテキスト部分の書体（フォント）、タイポグラフィ、レイアウトなどといった視覚的なデザインを調整したりわかりやすく見せるために用いられる</p>"+
+                            "<button class=\"button1\"onclick=\"next()\">suivant</button>";
+    }
+    function nextAgain(){console.log("nextAgain");}
+
+    function afficheStep(){
+      var etape1 = document.getElementById("number1");
+      var code1 = document.getElementById("blocCode1");
+      var etape2 = document.getElementById("number2");
+      var code2 = document.getElementById("blocCode2");
+      var etape3 = document.getElementById("number3");
+      var code3 = document.getElementById("blocCode3");
+
+      etape1.style.opacity="1";
+      code1.style.opacity="1";
+      etape2.style.opacity="1";
+      code2.style.opacity="1";
+      etape3.style.opacity="1";
+      code3.style.opacity="1";
+    }
+
+    var codeContent = [document.getElementById("contenu2_1"),
+                       document.getElementById("contenu2_2"),
+                       document.getElementById("contenu2_3")];
+
+
+    function afficheHTML(i){
+      codeContent[i-1].innerHTML="<div class=\"codeContent\">"+
+                            "<p class=\"explication\">Balisage</p><div class=\"scroll\" id=\"textScroll"+i+"\"></div></div>";
+      var textScroll = document.getElementById("textScroll"+i);
+
+          textScroll.textContent="["+i+"]<ul>"+
+                                    "<li><a href=\"#\"><img src=\"js1_0.png\"/></a></li>"+
+                                    "<li><a href=\"#\"><img src=\"html.png\"/></a></li>"+
+                                    "<li><a href=\"#\"><img src=\"css3.png\"/></a></li>"+
+                                  "</ul>";
+    }
+    function afficheCSS(i){
+      codeContent[i-1].innerHTML="<div class=\"codeContent\">"+
+                            "<p class=\"explication\">Balisage</p><div class=\"scroll\" id=\"textScroll"+i+"\"></div></div>";
+      var textScroll = document.getElementById("textScroll"+i);
+
+          textScroll.textContent="CSS";
+    }
+    function afficheRENDU(i){
+      codeContent[i-1].innerHTML="<div class=\"codeContent\">"+
+                            "<p class=\"explication\">Balisage</p><div class=\"scroll\" id=\"textScroll"+i+"\"></div></div>";
+      var textScroll = document.getElementById("textScroll"+i);
+
+          textScroll.textContent="RENDU";
+    }
+    </script>
+  </body>
+</html>
